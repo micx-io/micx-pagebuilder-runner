@@ -1,0 +1,22 @@
+version: "3"
+services:
+  pagebuilder:
+    image: ghcr.io/micx-io/micx-pagebuilder:unstable
+    environment:
+      STANDALONE: 1
+      STANDALONE_PATH: /opt/mock/repos/demo1-weba
+      CONF_REDIS_HOST: redis
+    ports:
+      - 5500:80
+    volumes:
+      - ./mock/repos:/data
+    networks:
+      - micx-pagebuilder-runner
+  redis:
+    image: "redis:7"
+    networks:
+      - micx-pagebuilder-runner
+
+networks:
+  micx-pagebuilder-runner:
+    external: true

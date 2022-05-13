@@ -1,0 +1,27 @@
+desc: Startseite
+ptags:
+  - text: In Navigationsleiste anzeigen
+    key: show_always
+  - text: In Navigationsleiste anzeigen
+    key: show_always
+is_sortable: true;
+
+layouts:
+  - layout: path/to/layout
+    text: Startseite der Website
+
+forms:
+  - key: navi_title
+    type: text
+    name: Titel in der Navigation
+    title: Wenn der Page-Tag In Navigationsleiste anzeigen aktiv ist, diesen wert als Titel nehmen. (Max. 30 Zeichen)
+    attrs:
+      maxlength: 30
+  - key: navi_desc
+    type: textarea
+    name: Titel in der Navigation
+    title: Wenn der Page-Tag In Navigationsleiste anzeigen aktiv ist, diesen wert als Titel nehmen. (Max. 30 Zeichen)
+    attrs:
+      maxlength: 30
+defaults:
+  layout: xy

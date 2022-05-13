@@ -1,0 +1,41 @@
+{
+  "name": "micx/formmailer",
+  "description": "Web Formmailer",
+  "license": "MIT",
+  "homepage": "https://infracamp.org/project/phore",
+  "authors": [
+    { "name": "Matthias Leuffen", "email": "m@tth.es" }
+  ],
+  "repositories": [
+  ],
+  "require": {
+    "php": ">=8.0",
+    "ext-json": "*",
+    "ext-openssl": "*",
+    "ext-redis": "*",
+    "brace/core": "*",
+    "brace/dbg": "*",
+    "brace/command": "*",
+    "phore/system": "*"
+  },
+  "require-dev": {
+    "phore/tester": "*"
+  },
+  "suggest": {
+  },
+  "autoload": {
+    "psr-4": {
+      "Micx\\PageBuilderRunner\\": "src/"
+    },
+    "files": [
+      "config.php"
+    ]
+  },
+  "autoload-dev": {
+    "psr-4": { "Phore\\Tests\\": "tests/" }
+  },
+  "minimum-stability": "dev",
+  "config": {
+    "preferred-install": "source"
+  }
+}

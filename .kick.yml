@@ -1,0 +1,27 @@
+version: 1
+from: "ghcr.io/nfra-project/kickstart-flavor-php:8.1"
+ports: "80:80"
+
+packages: [php8.1-curl, php8.1-http, php8.1-raphf, php8.1-redis, php8.1-sqlite,
+  psmisc, jekyll, ruby-jekyll-remote-theme, ruby-jekyll-coffeescript, ruby-jekyll-sass-converter,
+     ruby-jekyll-optional-front-matter, ruby-jekyll-sitemap, ruby-jekyll-seo-tag, ruby-jekyll-feed,
+    imagemagick]
+
+config_file:
+  template: "config.php.dist"
+  target: "config.php"
+
+command:
+  build:
+    - "sudo a2dismod php8.1" # Important! Disable PHP for Apache2
+    - "composer update"
+    - "sudo chmod -R 777 /opt/mock/repos"
+    - "sudo -E chmod -R 777 /var/www"
+
+  run:
+    - "sudo -E chmod -R 777 /var/www"
+    - brace wait
+  dev:
+  test:
+
+
