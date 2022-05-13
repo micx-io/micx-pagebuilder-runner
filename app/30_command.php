@@ -26,7 +26,7 @@ AppLoader::extend(function (BraceApp $app) {
             phore_exec("jekyll build -s :source -d :dest -b :base", [
                 "source" => $sourceDir,
                 "dest" => $target,
-                "base" => $msg
+                "base" => "/" . $msg . "/"
             ]);
             out("build successful");
         });
