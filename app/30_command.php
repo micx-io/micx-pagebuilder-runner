@@ -23,10 +23,9 @@ AppLoader::extend(function (BraceApp $app) {
         $redis->subscribe([CONF_REDIS_CHANNEL], function($redis, $chan, $msg) {
             $sourceDir = CONF_REPO_PATH . "/" . $msg . "/docs";
             $target = "/var/www/" . $msg;
-            phore_exec("jekyll build -s :source -d :dest -b :base", [
+            phore_exec("jekyll build -s :source -d :dest ", [
                 "source" => $sourceDir,
-                "dest" => $target,
-                "base" => "/" . $msg . "/"
+                "dest" => $target
             ]);
             out("build successful: $sourceDir > $target");
         });

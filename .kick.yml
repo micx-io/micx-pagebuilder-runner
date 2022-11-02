@@ -14,6 +14,7 @@ config_file:
 command:
   build:
     - "sudo a2dismod php8.1" # Important! Disable PHP for Apache2
+    - "sudo a2enmod vhost_alias" # Mass hosting
     - "composer update"
     - "sudo chmod -R 777 /opt/mock/repos"
     - "sudo -E chmod -R 777 /var/www"
