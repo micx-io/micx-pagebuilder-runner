@@ -28,7 +28,7 @@ AppLoader::extend(function (BraceApp $app) {
                 "dest" => $target,
                 "base" => "/" . $msg . "/"
             ]);
-            out("build successful");
+            out("build successful: $sourceDir > $target");
         });
     });
 
